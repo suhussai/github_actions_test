@@ -10,8 +10,19 @@ on:
   pull_request:
     branches: [ master ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    container:
+      image: syedhussainrackspace/bb_image:release-0.1.1
+      env:
+        NODE_ENV: development
+      volumes:
+        - $GITHUB_WORKSPACE:/
+    steps:
+      - name: TF version
+        run: terraform version
+
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
