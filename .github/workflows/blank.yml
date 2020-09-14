@@ -17,11 +17,18 @@ jobs:
       image: syedhussainrackspace/bb_image:release-0.1.1
       env:
         NODE_ENV: development
-      volumes:
-        - $GITHUB_WORKSPACE:/terraform_code
+#       volumes:
+#         - $GITHUB_WORKSPACE:/terraform_code
     steps:
+      - uses: actions/checkout@v2
       - name: TF version
         run: terraform version
+
+      - name: where we are
+        run: pwd
+
+      - name: whatstrehre
+        run: ls /
 
 #   # This workflow contains a single job called "build"
 #   build:
