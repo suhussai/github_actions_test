@@ -31,7 +31,10 @@ jobs:
         run: ls /
 
       - name: whatshere
-        run: ls
+        run: ls -lah
+
+      - name: whatshere
+        run: tfsec && tflint
 
 #   # This workflow contains a single job called "build"
 #   build:
